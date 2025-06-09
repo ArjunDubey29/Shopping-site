@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>whyShop</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <h1><a href="home.php">whyShop.com</a></h1>
+
+  <form action="home.php" method="post" class="SearchBox">
+    <input type="text" class="search-input" name="search" placeholder="Search Here">
+    <input type="submit" class="search-submit" value="Search">
+  </form>
+
+  <div class="profile" id="profileMenu">
+    <i class="fa fa-user-circle-o" style="font-size:30px"></i>
+    <div>
+      <a href="home.php"><button>Home</button></a>
+      <a href="cart.php"><button>View cart</button></a>
+      <a href="logout.php"><button>Logout</button></a>
+    </div>
+  </div>
+</header>
+
+<!-- Place this at the bottom of the page before </body> -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const profile = document.querySelector(".profile");
+
+    profile.addEventListener("click", function (e) {
+      e.stopPropagation(); // Prevent closing when clicking inside
+      profile.classList.toggle("active");
+    });
+
+    document.addEventListener("click", function () {
+      profile.classList.remove("active");
+    });
+  });
+</script>
+
+</body>
+</html>
